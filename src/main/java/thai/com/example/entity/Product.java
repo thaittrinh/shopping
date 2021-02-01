@@ -8,6 +8,7 @@ import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -20,6 +21,9 @@ import lombok.Setter;
 @Entity
 @Table(
   name = "product",
+  uniqueConstraints = {
+    @UniqueConstraint(columnNames = "code")
+  },
   indexes = {
     @Index(columnList = "id")
   }

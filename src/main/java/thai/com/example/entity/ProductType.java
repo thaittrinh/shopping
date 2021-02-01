@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -15,6 +16,9 @@ import lombok.Setter;
 @Entity
 @Table(
   name = "product_type",
+  uniqueConstraints = {
+    @UniqueConstraint(columnNames = "name")
+  },
   indexes = {
     @Index(columnList = "id") 
   }
@@ -28,9 +32,6 @@ public class ProductType {
   private Long id;
   
   @NotNull
-  private String code;
-  
-  @NotNull
   private String name;
   
   @NotNull
@@ -38,14 +39,9 @@ public class ProductType {
   
   private String description;
   
-  public ProductType(String code, String name) {
-    this.code = code;
+  public ProductType(String name, String label) {
     this.name = name;
-  }
-  
-  public ProductType withLabel(String label) {
     this.label = label;
-    return this;
   }
   
   public ProductType withDescription(String description) {

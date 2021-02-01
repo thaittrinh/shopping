@@ -51,7 +51,6 @@ public class Customer {
   
   private String email;
   
-  
   public Customer(String loginId, String fullName) {
     this.loginId = loginId;
     this.fullName = fullName;

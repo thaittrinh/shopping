@@ -6,4 +6,6 @@ import thai.com.example.entity.ProductType;
 
 public interface ProductTypeRepository extends JpaRepository<ProductType, Long> {
 
+  ProductType findByName(String name);
+  
 }
