@@ -1,0 +1,2 @@
+# shopping
+Install lombok, gradle
