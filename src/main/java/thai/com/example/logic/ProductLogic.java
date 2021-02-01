@@ -19,7 +19,7 @@ public class ProductLogic {
   @Autowired
   ProductRepository productRepo;
   
-  public ProductType geProductType(String name) {
+  public ProductType getProductType(String name) {
     return productTypeRepo.findByName(name);
   }
   
@@ -31,7 +31,7 @@ public class ProductLogic {
     return productTypeRepo.save(productType);
   }
   
-  public Product geProduct(String code) {
+  public Product getProduct(String code) {
     return productRepo.findByCode(code);
   }
   
