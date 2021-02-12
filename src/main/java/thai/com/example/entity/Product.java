@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
@@ -46,9 +44,9 @@ public class Product {
   @NotNull
   private String label;
   
-  @ManyToOne(optional = false)
-  @JoinColumn(name = "productTypeId", referencedColumnName = "id")
-  private ProductType type;
+//  @ManyToOne(optional = false)
+//  @JoinColumn(name = "productTypeId", referencedColumnName = "id")
+//  private ProductType type;
   
   private String image;
   

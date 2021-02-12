@@ -27,7 +27,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter @Setter
 public class Order {
-  static public enum Status { Ready, PartiallyDelivered, Delivered };
+  static public enum Status { Draf, Ready, PartiallyDelivered, Delivered };
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
