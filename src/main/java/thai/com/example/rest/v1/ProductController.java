@@ -44,19 +44,19 @@ public class ProductController {
   }
   
   @ApiOperation(value = "Get product by code", response = Product.class)
-  @GetMapping("/product/{code}")
+  @GetMapping("/{code}")
   public Product getProduct( @PathVariable("code") String code) {
     return productService.getProduct(code);
   }
   
   @ApiOperation(value = "Save product", response = Product.class)
-  @PutMapping("/product")
+  @PutMapping()
   public Product saveProduct(@RequestBody Product product) {
     return productService.saveProduct(product);
   }
   
   @ApiOperation(value = "Find all product", responseContainer = "List" ,response = Product.class)
-  @PostMapping("/product")
+  @PostMapping("/all")
   public List<Product> findProducts() {
     return productService.findAllProducts();
   }

@@ -1,7 +1,6 @@
 import Aside from 'components/Aside';
 import Header from 'components/Header';
-import ProductList from 'features/Product/ProductList'
-import CustomerList from 'features/Customer/CustomerList'
+import Product from 'features/product'
 
 import {
   BrowserRouter as Router,
@@ -12,7 +11,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
-import './FontawesomeIcons'
+import './fontawesomeIcon'
 
 function App() {
   return (
@@ -24,8 +23,8 @@ function App() {
           <div className="h-100">
             <Switch>
               <Redirect exact from="/" to="/products" />
-              <Route exact path="/products" component={ProductList} />
-              <Route exact path="/customers" component={CustomerList} />
+              <Route path="/products" component={Product} />
+              {/* <Route path="/customers" component={CustomerList} /> */}
             </Switch>
           </div>
         </div>
